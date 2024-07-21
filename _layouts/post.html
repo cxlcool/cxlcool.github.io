@@ -1,20 +1,37 @@
 ---
 layout: page
 ---
-<article class="c-article">
-    <header class="c-article__header">
-        <h1 class="c-article__title">{{ page.title }}</h1>
-        <p class="c-article__time"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
-    </header>
-    <div class="c-article__main">
-        {{ content }}
-		{% include comment.html %}
-    </div>
-    <footer class="c-article__footer">
-        <p>
-        {% for tag in page.tags %}
-            <span class="c-tag">{{ tag }}</span>
-        {% endfor %}
-        </p>
-    </footer>
-</article>
+
+<div class="post">
+  <div>
+    {% if page.title %}
+    <p class="post_title">{{ page.title }}</p>
+    {% endif %}
+  </div>
+  <div class="post_data">
+    {% if page.date %}
+    <span class="post_date">{{ page.date | date: "%b %-d, %Y" }}</span>
+    {% endif %}
+    {% if page.categories %}
+    <span class="post_categories">
+      &raquo; {% for cat_name in page.categories %}
+      <a href="{{ site.baseurl }}/categories/{{ cat_name }}">{{ cat_name }}</a>{% if forloop.last == false %},
+      {% endif %}{% endfor %}
+    </span>
+    {% endif %}
+  </div>
+  <div class="post_content">
+    {{ content }}
+  </div>
+
+
+  {% if page.comment %}
+  <div class="post_comment">
+
+    {% include disqus.html username = site.disqus.shortname %}
+    {% include cusdis.html %}
+
+  </div>
+  {% endif %}
+
+</div>
