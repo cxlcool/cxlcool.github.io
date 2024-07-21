@@ -1,13 +1,13 @@
 
-title: Catbook #Your awesome title
-email: #youremail@domain.com
+title: Leon's blogs #Your awesome title
+email: 1192876128@qq.com #youremail@domain.com
 description: > # this means to ignore newlines until "baseurl"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 
 baseurl: # the subpath of the site
-url: http://starry99.github.io/catbook # the base hostname & protocol for your site
+url: http://leon001.com # the base hostname & protocol for your site
 
 permalink: /:year-:month/:title
 timezone:
@@ -20,9 +20,9 @@ cusdis:
     app_id: #your cusdis app_id
 
 user:
-  name: Catbook
+  name: Leon' blogs
   pic: /assets/img/cat.jpg
-  picAlt: "catbook"
+  picAlt: "catbook_blogs"
   job: a category-centric theme
   aboutme: true # comment this out if you don't need the 'about' page.
 
